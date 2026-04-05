@@ -1,12 +1,15 @@
-<% layout("/layouts/boilerplate") -%>  <!--boiler plate theke body ar ager code nibe-->
-<body>
-    <h3>All Listings</h3>
+ <% layout("/layouts/boilerplate") -%>  <!--boiler plate theke body ar ager code nibe-->
+
+
+<h3>All Listings</h3>
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for(let listing of allListings){ %>
     <a href="/listings/<%= listing.id %>" class="listing-link">   
-    <div class="card" style="width: 20rem;">
-        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem">
+    <div class="card listing-card"  style="width: 20rem;">
+        <img src="<%= listing.image.url ? listing.image.url : listing.image %>" 
+           class="card-img-top" alt="listing_image" style="height:20rem">
+        
         <div class="card-img-overlay">@imran_sk</div>
         <div class="card-body">
             <p class="card-text">
@@ -23,9 +26,6 @@
 </div>
 
   
-   
 
-  
-   
-</body>
+
 
